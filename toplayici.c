@@ -1,16 +1,15 @@
 #include <stdio.h>
 
+//Sayinin Basamak toplamlarını bulan bir program
 int main(){
-    int sonsayi=0,toplam=0;
-    printf("Sonuncu Sayiyi Giriniz: ");scanf("%d",&sonsayi);
+    char strsayi[100];
+    int toplam=0;
+    memset(strsayi,0,strlen(strsayi));
+    printf("%s",strsayi);
+    printf("Sayiyi Giriniz: ");scanf("%s",&strsayi);
 
-    for(int i=0;i<=sonsayi;i++){
-        if(i % 2 == 1){
-         toplam += i;
-        }
+    for(int i=0;i < strlen(strsayi);i++){
+        toplam += strsayi[i] - '0';
     }
-    printf("0'dan %d kadar olan tek tamsayilarin toplami %d'dir.",sonsayi,toplam);
-
-
-
+    printf("Sonuc %d",toplam);
 }
